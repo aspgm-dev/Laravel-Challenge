@@ -217,8 +217,8 @@ class NewsController extends Controller
         ]);
 
         $comment = new Comment();
-        $comment->author_name = \Auth::user()->name;
-        $comment->author_email = \Auth::user()->email;
+        $comment->name = \Auth::user()->name;
+        $comment->email = \Auth::user()->email;
         $comment->comment_text = $request->input('comment_text');
         $comment->news_id = $request->get('news_id');
         $comment->save();
